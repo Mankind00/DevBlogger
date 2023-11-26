@@ -1,0 +1,40 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="site-inner">
+    <h1>Compose</h1>
+  <form class="" action="/compose" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label>Title</label>
+      <input class="form-control " type="text" name="postTitle" />
+      <label>Post</label>
+      <textarea
+        id="editor"
+        class="form-control editor"
+        name="postBody"
+       
+      ></textarea>
+      <label>Add Image</label>
+      <input type="file" name="image" class="form-control input-file" />
+      <label>Choose Category</label>
+      <select name="pets" id="pet-select">
+        <option value="">--Select Category--</option>
+        <option value="javascript">Javascript</option>
+        <option value="Node.js">Node.js</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="NoSQL">NoSQL</option>
+        <option value="SQL"></option>
+        <option value="SQL"></option>
+        <option value="SQL"></option>
+      </select>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary compose-submit-btn " type="submit" name="button">Publish</button>
+    </div>
+  </form>
+  </div>
+</div>
+
+
+
+<%- include("partials/footer"); -%>

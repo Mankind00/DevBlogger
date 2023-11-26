@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+
+
+<div class="home-intro">
+  <h1 class="heading-intro"><%= title %></h1>
+</div>
+<div class="site-inner">
+  <div class="post-featured-image">
+    <img
+      class="featured-image"
+      src="data:<%=addImage.contentType%>;base64,
+      <%=addImage.data.toString('base64')%>"
+    />
+  </div>
+  
+  
+  <div class="post-container">
+    <main class="post-main-content">
+        <p><%- content %></p>
+    </main>
+    <aside class="post-aside">
+        <p>Related article</p>
+    </aside>
+  </div>
+</div>
+
+
+
+
+<%- include("partials/footer"); -%>

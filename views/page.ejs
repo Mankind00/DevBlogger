@@ -1,0 +1,34 @@
+<%- include("partials/header"); -%>
+
+<div class="grid-container">
+
+    <%posts.forEach((post, index) => { %>
+      <div class="grid-item grid-item<%=index + 1%> <%= index == 0 ? 'large-frame-grid' : index == 7 ? 'large-frame-grid'  : 'custom-border' %>">
+        <header>
+          <h2 class="entry-title">
+            <a class="entry-title-link" href="/post/<%=post._id%>"><%=post.postTitle%></a>
+          </h2>
+        </header>
+
+        <p class="post-paragraph <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>">
+          <%- post.postContent.substring(0, 100)gti%>
+        </p>
+        <div>
+          <a class="read--more <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>" href="/post/<%=post._id%>">Read More</a>
+        </div>
+      </div>
+    <% }) %>
+
+    </div>
+
+    <div class="pagination-archive">
+      <ul>
+      <% for (let i = 1; i <= pageCount; i++) { %>
+        <li class="<%= i == currPage ? 'active' : '' %>">
+          <a href="/<%= i === 1 ? '' : 'page/' + i%>"><%=i%></a>
+        </li>
+     <% } %>
+      </ul>
+    </div>
+
+<%- include("partials/footer"); -%>

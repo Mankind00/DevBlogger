@@ -1,0 +1,33 @@
+<%- include("partials/header"); -%>
+
+
+<div class="container registration-container">
+    <h2> Register</h2>
+    <form action="/register" method="POST">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" class="form-control form-control-custom" id="fullName" placeholder="Enter your full name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" name="email" class="form-control form-control-custom" id="email" placeholder="Enter your email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control form-control-custom" id="password" placeholder="Enter your password" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control form-control-custom" id="confirmPassword" placeholder="Confirm your password" oninput="checkPasswordMatch()" required>
+        <small id="passwordMatch" class="form-text text-danger"></small>
+      </div>
+  
+      <button type="submit" class="btn btn-primary btn-block compose-submit-btn" id="registerBtn" disabled>Register</button>
+    </form>
+    <p class="text-center mt-3">Already have an account? <a href="#">Login here</a></p>
+  </div>
+
+<%- include("partials/footer"); -%>
