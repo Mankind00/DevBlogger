@@ -10,6 +10,8 @@ const {
   composeView,
   admin,
   loginUser,
+  newPostView,
+  allPostView,
   testPost,
   aboutView,
   contactView,
@@ -23,6 +25,8 @@ router.get("/", homeView);
 router.get("/page/:pageNum", pageView);
 router.get("/post/:postid", postView);
 router.get("/login", loginView);
+router.get("/admin/new-post", newPostView)
+router.get("/admin/all-posts", allPostView)
 router.post("/login", loginUser);
 router.get("/signup", registerView)
 router.post("/register", registerUser)

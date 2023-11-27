@@ -121,9 +121,9 @@ const pageView = (req, res) => {
 
 // };
 
-const adminPanel = (req, res) => {
-  res.render("admin-layout", {});
-};
+// const adminPanel = (req, res) => {
+//   res.render("admin-layout", {});
+// };
 
 const admin = (req, res) => {
   res.render("admin")
@@ -135,7 +135,25 @@ const adminTest = (req, res) => {
 } else {
     res.redirect("/login")
 }
-};
+}
+
+const newPostView = (req, res) => {
+  // if(req.isAuthenticated()) {
+  //   res.render(newPost.ejs)
+  // } else {
+  //   res.redirect("/login")
+  // }
+  res.render("newPost")
+}
+
+const allPostView = (req, res) => {
+  // if(req.isAuthenticated()) {
+  //   res.render(newPost.ejs)
+  // } else {
+  //   res.redirect("/login")
+  // }
+  res.render("allPost")
+}
 
 const composeView = (req, res) => {
   res.render("compose")
@@ -182,10 +200,11 @@ module.exports = {
   postView,
   loginView,
   loginUser,
-  adminPanel,
   adminTest,
   registerView,
   registerUser,
   composeView,
-  admin
+  admin,
+  newPostView,
+  allPostView
 };
