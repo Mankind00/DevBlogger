@@ -9,6 +9,12 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="application/javascript" src="/js/ckeditor5-40.0.0-r5u2sernxv3x/build/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script> -->
+    <script type="application/javascript" src="/js/script.js"></script>
   <link rel="stylesheet" href="/css/admin-style.css">
 </head>
 
@@ -275,25 +281,101 @@
 <main class="main users chart-page" id="skip-target">
     <div class="container">
       <h2 class="main-title">Add New Post</h2>
-      <div class="row">
-        <div class="col-md-8">
-            <form>
-                <div class="form-group row">
-                <label for="text" class="col-12 col-form-label">Enter Title here</label> 
-                <div class="col-12">
-                    <input id="text" name="text" placeholder="Enter Title here" class="form-control here" required="required" type="text">
-                </div>
-                </div>
-                <div class="form-group row">
-                <label for="textarea" class="col-12 col-form-label">Visual Editor</label> 
-                <div class="col-12">
-                    <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
-                </div>
+      <form action="">
+        <div class="row">
+          <div class="col-md-8">
+              <div class="form-group row">
+                  <label for="text" class="col-12 col-form-label">Enter Title here</label> 
+                  <div class="col-12">
+                      <input id="text" name="text" placeholder="Enter Title here" class="form-control here" required="required" type="text">
+                  </div>
+                  </div>
+                  <div class="form-group row">
+                  <label for="textarea" class="col-12 col-form-label">Visual Editor</label> 
+                  <div class="col-12">
+                      <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control editor"></textarea>
+                  </div>
                 </div> 
-            </form>
+          </div>
+          <div class="col-md-4 ">
+            <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light top-cat-title"><h3>Publish</h3></div>
+                      <div class="card-body">
+                       
+                      </div>
+                      <div class="card-footer bg-light">
+                          <button type="button" class="btn btn-outline-secondary btn-sm">Preview</button>
+                          <button type="button" class="btn btn-info btn-sm">Save Draft</button>
+                          <button type="button" class="btn btn-primary btn-sm">Publish</button>
+                      </div>
+                    </div>
+                <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light top-cat-title"><h3>Tags</h3></div>
+                      <div class="card-body">
+                        <form>
+                          <div class="form-group row">
+                            <div class="col-9">
+                              <input id="tags" name="tags" placeholder="seperate with commas" required="required" class="form-control here" type="text">
+                            </div>
+                            <div class=" col-2">
+                              <button name="" type="" class="btn btn-light">Add</button>
+                            </div>
+                            <div class="col-12">
+                                <small>Seperate Tags with commas</small>
+                            </div>
+                          </div> 
+                        </form>
+                        
+
+                      </div>
+                      <div class="card-footer bg-light">
+                          <a href="#">Choose from the most used tags</a>
+                      </div>
+                    </div>
+                <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light top-cat-title"><h3>Categories</h3></div>
+                      <div class="card-body">
+                        <form>
+                          <div class="form-group row">
+                            <div class="col-9">
+                              <input id="tags" name="tags" placeholder=" " required="required" class="form-control here" type="text">
+                            </div>
+                            <div class=" col-2">
+                              <button name="submit" type="" class="btn btn-light">Add</button>
+                            </div>
+                            
+                          </div> 
+                        </form>
+                        <form>
+                          <div class="form-group row">
+                            <label for="select" class="col-12 col-form-label">Select Category</label> 
+                            <div class="col-8">
+                              <select id="select" name="select" class="custom-select" required="required">
+                                <option value="rabbit">Rabbit</option>
+                                <option value="duck">Duck</option>
+                                <option value="fish">Fish</option>
+                              </select>
+                            </div>
+                          </div> 
+                        </form>
+                      </div>
+                      <div class="card-footer bg-light">
+                          <button type="button" class="btn btn-primary btn-sm">Add New Category</button>
+                      </div>
+                    </div>
+                <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light ">Featured Image</div>
+                      <div class="card-body">
+                        
+
+                      </div>
+                      <div class="card-footer bg-light">
+                          <a href="#">Set Featured Image</a>
+                      </div>
+                    </div>    
         </div>
-      </div>
-        
+        </div>
+      </form>
     </div>
 </main>
 <footer class="footer">
