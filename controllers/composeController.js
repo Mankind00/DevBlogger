@@ -147,12 +147,16 @@ const newPostView = (req, res) => {
 }
 
 const allPostView = (req, res) => {
-  // if(req.isAuthenticated()) {
-  //   res.render(newPost.ejs)
-  // } else {
-  //   res.redirect("/login")
-  // }
-  res.render("allPost")
+  Post.paginate({}, { sort: { _id: -1 }, offset: 0, limit: size }).then(
+    (result) => {
+      // console.log(result.totalPages);
+      res.render("allPost", {
+        posts: result.docs,
+        pageCount: result.totalPages,
+        currPage: result.page,
+      });
+    }
+  );
 }
 
 const composeView = (req, res) => {

@@ -12,9 +12,9 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="application/javascript" src="/js/ckeditor5-40.0.0-r5u2sernxv3x/build/ckeditor.js"></script>
-    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script> -->
-    <script type="application/javascript" src="/js/script.js"></script>
+<!-- <script type="application/javascript" src="/js/ckeditor5-40.0.0-r5u2sernxv3x/build/ckeditor.js"></script> -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+    <script src="/js/script.js"></script>
   <link rel="stylesheet" href="/css/admin-style.css">
 </head>
 
@@ -44,10 +44,10 @@
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                    <a class="" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
-                    <a class="show-cat-btn" href="##">
+                    <a class=" active show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Posts
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
@@ -167,7 +167,7 @@
     <div class="sidebar-footer">
         <a href="##" class="sidebar-user">
             <span class="sidebar-user-img">
-                <picture><source srcset="./img/avatar/avatar-illustrated-01.webp" type="image/webp"><img src="./img/avatar/avatar-illustrated-01.png" alt="User name"></picture>
+                <picture><source srcset="/img/avatar/avatar-illustrated-01.webp" type="image/webp"><img src="/img/avatar/avatar-illustrated-01.png" alt="User name"></picture>
             </span>
             <div class="sidebar-user-info">
                 <span class="sidebar-user__title">Nafisa Sh.</span>
@@ -257,7 +257,7 @@
         <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
           <span class="sr-only">My profile</span>
           <span class="nav-user-img">
-            <picture><source srcset="./img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="./img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
+            <picture><source srcset="/img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="/img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
@@ -285,15 +285,15 @@
         <div class="row">
           <div class="col-md-8">
               <div class="form-group row">
-                  <label for="text" class="col-12 col-form-label">Enter Title here</label> 
+                  <label for="text" class="col-12 col-form-label top-cat-title"><h3>Title</h3></label> 
                   <div class="col-12">
                       <input id="text" name="text" placeholder="Enter Title here" class="form-control here" required="required" type="text">
                   </div>
                   </div>
                   <div class="form-group row">
-                  <label for="textarea" class="col-12 col-form-label">Visual Editor</label> 
+                  <label for="textarea" class="col-12 col-form-label top-cat-title"><h3>Editor</h3></label> 
                   <div class="col-12">
-                      <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control editor"></textarea>
+                      <textarea id="editor" name="textarea" cols="40" rows="5" class="form-control "></textarea>
                   </div>
                 </div> 
           </div>
@@ -394,10 +394,10 @@
     </div>
   </div>
   <!-- Chart library -->
-  <script src="js/chart.min.js"></script>
+  <script src="/js/chart.min.js"></script>
   <!-- Icons library -->
-  <script src="js/feather.min.js"></script>
+  <script src="/js/feather.min.js"></script>
   <!-- Custom scripts -->
-  <script  src="js/admin-script.js"></script>
+  <script  src="/js/admin-script.js"></script>
   </body>
   </html>

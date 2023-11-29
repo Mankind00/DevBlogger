@@ -290,7 +290,7 @@ div a.read--more:hover {
   display: inline-block;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: 500;
   margin-bottom: 4px;
   padding: 3px 7px;

@@ -3497,6 +3497,92 @@ label {
   display: none;
 }
 
+/* MY CUSTOM EDITS */
+
+.pagination-archive {
+  text-align: center;
+  display: block;
+  margin: 50px auto 0;
+  position: relative;
+  width: auto;
+}
+.pagination-archive ul {
+  display: flex;
+  justify-content: center;
+}
+.pagination-archive li.active a {
+  border-bottom: 2px solid #1abc9c;
+  color:#1abc9c;
+  font-weight: bold;
+}
+.pagination-archive li a {
+  color: #546E7A;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  /* font-size: 1.5rem; */
+  font-weight: 500;
+  margin-bottom: 4px;
+  padding: 3px 7px;
+  text-decoration: none;
+}
+.pagination-archive li {
+  display: inline-block;
+}
+.pagination-archive li a:hover {
+  color: #1abc9c;
+}
+
+
+.butto {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+/* Edit button styling */
+.edit-button {
+  background-color: #4CAF50; /* Green */
+  color: #fff;
+}
+
+/* Hover effect for Edit button */
+.edit-button:hover {
+  background-color: #45a049; /* A deeper shade of green */
+}
+
+/* Delete button styling */
+.delete-button {
+  background-color: #f44336; /* Red */
+  color: #fff;
+}
+
+/* Hover effect for Delete button */
+.delete-button:hover {
+  background-color: #d32f2f; /* A deeper shade of red */
+}
+
+/* Preview button styling */
+.preview-button {
+  background-color: #2196F3; /* Blue */
+  color: #fff;
+}
+
+/* Hover effect for Preview button */
+.preview-button:hover {
+  background-color: #1565c0; /* A deeper shade of blue */
+}
+
+
+
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

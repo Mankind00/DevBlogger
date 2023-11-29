@@ -53,17 +53,17 @@
         </div>
       <% }) %>
   
-      </div>
-  
-      <div class="pagination-archive">
-        <ul>
-        <% for (let i = 1; i <= pageCount; i++) { %>
-          <li class="<%= i === currPage ? 'active' : '' %>">
-            <a href="/<%= i == 1 ? '' : 'page/' + i%>"><%=i%></a>
-          </li>
-       <% } %>
-        </ul>
       </div> -->
+  
+    </div>
+    <div class="pagination-archive">
+      <ul>
+      <% for (let i = 1; i <= pageCount; i++) { %>
+        <li class="<%= i === currPage ? 'active' : '' %>">
+          <a href="/<%= i == 1 ? '' : 'page/' + i%>"><%=i%></a>
+        </li>
+     <% } %>
+      </ul>
     </div>
   </div>
       
