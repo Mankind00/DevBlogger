@@ -7,10 +7,10 @@
     <div class="grid-container">
       <% posts.forEach((post, index) => { %>
       <div class="grid-item grid-item<%=index + 1%> <%= index == 0 ? 'large-frame-grid' : index == 6 ? 'large-frame-grid'  : 'custom-border' %>">Item <%=index + 1%>
-        <div class="thumbnail-container">
+        <!-- <div class="thumbnail-container">
           <img src="data:<%=post.img.contentType%>;base64,
           <%=post.img.data.toString('base64')%>" alt="Thumbnail Image" class="thumbnail-image">
-        </div>
+        </div> -->
         <header>
           <h2 class="entry-title">
             <a class="entry-title-link" href="/post/<%=post._id%>"><%=post.postTitle%></a>

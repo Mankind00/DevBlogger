@@ -6,9 +6,11 @@ const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
 const {Post, User} = require("../models/Schema");
-const passport = require("passport")
+const passport = require("passport");
+const session = require("express-session");
 
-const session = require("express-session")
+
+
 // const { result } = require("lodash");
 // const helper = require("../config/helper");
 // const helper = require("../config/helper");
@@ -172,12 +174,7 @@ const newPost = (req, res) => {
         postTitle: req.body.postTitle,
         postContent: req.body.postBody,
 
-        img: {
-          data: fs.readFileSync(
-            path.join(__dirname + "/uploads/" + req.file.filename)
-          ),
-          contentType: "image/png",
-        },
+        img: req.file.path,
       });
       post
         .save()
