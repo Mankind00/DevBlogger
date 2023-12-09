@@ -2,12 +2,20 @@
 
 // For Home Page
 // const upload = require("../models/Post");
+const express = require("express");
+
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
-const {Post, User} = require("../models/Schema");
+const {Post, Draft} = require("../models/Schema");
 const passport = require("passport");
 const session = require("express-session");
+// const bodyParser = require("body-parser");
+
+// const app = express();
+
+
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
@@ -20,14 +28,24 @@ const session = require("express-session");
 
 // const obj = { c: "T", "&gt;": ">" };
 // console.log(helper.obj);
-const storage = multer.diskStorage({
-  destination: "./uploads",
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: "/uploads",
+//   filename: (req, file, cb) => {
+//     cb(null, file.originalname);
+//   },
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+})
+var upload = multer({ storage: storage })
 const size = 9;
 
 const homeView = (req, res) => {
@@ -166,23 +184,47 @@ const composeView = (req, res) => {
 }
 
 const newPost = (req, res) => {
-  upload.single("image")(req, res, (err) => {
+  console.log(req.body.title, req.body.description);
+//   const post = new Post({
+//     postTitle : req.body.title,
+//     postContent : req.body.description
+//   })
+//   post.save().then(()=>{
+//             res.redirect("/admin/new-post");
+//         }).catch((err)=>{
+//             console.log(err);
+//         })
+upload.single("image")(req, res, (err) => {
     if (err) {
       console.log(err);
     } else {
       const post = new Post({
-        postTitle: req.body.postTitle,
-        postContent: req.body.postBody,
+        postTitle: req.body.title,
+        postContent: req.body.description,
 
-        img: req.file.path,
+        img: req.file.filename
       });
       post
         .save()
-        .then(() => res.redirect("/"))
+        .then(() => res.redirect("/admin/new-post"))
         .catch((err) => console.log(err));
+      console.log(req.file)
     }
   });
-};
+}
+
+const newDraft = (req, res) => {
+  console.log(req.body.title, req.body.description);
+  const draft = new Draft({
+    postTitle : req.body.title,
+    postContent : req.body.description
+  })
+  draft.save().then(()=>{
+            res.redirect("/admin");
+        }).catch((err)=>{
+            console.log(err);
+        })
+}
 
 const aboutView = (req, res) => {
   res.render("about", {});
@@ -207,5 +249,8 @@ module.exports = {
   composeView,
   admin,
   newPostView,
-  allPostView
+  allPostView,
+  newDraft
 };
+
+

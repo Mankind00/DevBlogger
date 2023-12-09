@@ -12,6 +12,7 @@ const {
   loginUser,
   newPostView,
   allPostView,
+  newDraft,
   testPost,
   aboutView,
   contactView,
@@ -34,6 +35,9 @@ router.post("/register", registerUser)
 router.get("/admin", admin);
 // router.get("/about", aboutView);
 // router.get("/contact", contactView);
-router.post("/compose", newPost);
+router.post("/admin/new-post", newPost);
+// router.post("/compose", newPost);
+router.post("/admin/save-draft-route", newPost);
+router.post("/admin/save-drafts", newDraft);
 
 module.exports = router;

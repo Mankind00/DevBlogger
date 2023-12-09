@@ -7,10 +7,7 @@
     <div class="grid-container">
       <% posts.forEach((post, index) => { %>
       <div class="grid-item grid-item<%=index + 1%> <%= index == 0 ? 'large-frame-grid' : index == 6 ? 'large-frame-grid'  : 'custom-border' %>">Item <%=index + 1%>
-        <!-- <div class="thumbnail-container">
-          <img src="data:<%=post.img.contentType%>;base64,
-          <%=post.img.data.toString('base64')%>" alt="Thumbnail Image" class="thumbnail-image">
-        </div> -->
+        
         <header>
           <h2 class="entry-title">
             <a class="entry-title-link" href="/post/<%=post._id%>"><%=post.postTitle%></a>
@@ -32,28 +29,7 @@
       <div class="grid-item">Item 9</div> -->
 
 
-      <!-- <%posts.forEach((post, index) => { %>
-        <div class="grid-item grid-item<%=index + 1%> <%= index == 0 ? 'large-frame-grid' : index == 6 ? 'large-frame-grid'  : 'custom-border' %>">
-          <div class="thumbnail-container">
-            <img src="data:<%=post.img.contentType%>;base64,
-            <%=post.img.data.toString('base64')%>" alt="Thumbnail Image" class="thumbnail-image">
-          </div>
-          <header>
-            <h2 class="entry-title">
-              <a class="entry-title-link" href="/post/<%=post._id%>"><%=post.postTitle%></a>
-            </h2>
-          </header>
-            <p class="post-paragraph <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>">
-              <%- post.postContent.substring(0, 100)%>
-            </p>
-            <div>
-              <a href="/post/<%=post._id%>" class="continue-reading-button <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>">Continue Reading</a>
-            </div>
-          
-        </div>
-      <% }) %>
-  
-      </div> -->
+     
   
     </div>
     <div class="pagination-archive">

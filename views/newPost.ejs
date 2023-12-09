@@ -281,89 +281,37 @@
 <main class="main users chart-page" id="skip-target">
     <div class="container">
       <h2 class="main-title">Add New Post</h2>
-      <form action="">
-        <div class="row">
-          <div class="col-md-8">
-              <div class="form-group row">
-                  <label for="text" class="col-12 col-form-label top-cat-title"><h3>Title</h3></label> 
-                  <div class="col-12">
-                      <input id="text" name="text" placeholder="Enter Title here" class="form-control here" required="required" type="text">
-                  </div>
-                  </div>
-                  <div class="form-group row">
-                  <label for="textarea" class="col-12 col-form-label top-cat-title"><h3>Editor</h3></label> 
-                  <div class="col-12">
-                      <textarea id="editor" name="textarea" cols="40" rows="5" class="form-control "></textarea>
-                  </div>
-                </div> 
-          </div>
-          <div class="col-md-4 ">
-                <div class="card mb-3" style="max-width: 18rem;">
-                      <div class="card-header bg-light top-cat-title"><h3>Tags</h3></div>
-                      <div class="card-body">
-                        <form>
-                          <div class="form-group row">
-                            <div class="col-9">
-                              <input id="tags" name="tags" placeholder="seperate with commas" required="required" class="form-control here" type="text">
-                            </div>
-                            <div class=" col-2">
-                              <button name="" type="" class="btn btn-light">Add</button>
-                            </div>
-                            <div class="col-12">
-                                <small>Seperate Tags with commas</small>
-                            </div>
-                          </div> 
-                        </form>
-                        
-
-                      </div>
-                      <div class="card-footer bg-light">
-                          <a href="#">Choose from the most used tags</a>
-                      </div>
-                    </div>
-                <div class="card mb-3" style="max-width: 18rem;">
-                      <div class="card-header bg-light top-cat-title"><h3>Categories</h3></div>
-                      <div class="card-body">
-                        <form>
-                          <div class="form-group row">
-                            <div class="col-9">
-                              <input id="tags" name="tags" placeholder=" " required="required" class="form-control here" type="text">
-                            </div>
-                            <div class=" col-2">
-                              <button name="submit" type="" class="btn btn-light">Add</button>
-                            </div>
-                            
-                          </div> 
-                        </form>
-                        <form>
-                          <div class="form-group row">
-                            <label for="select" class="col-12 col-form-label">Select Category</label> 
-                            <div class="col-8">
-                              <select id="select" name="select" class="custom-select" required="required">
-                                <option value="rabbit">Rabbit</option>
-                                <option value="duck">Duck</option>
-                                <option value="fish">Fish</option>
-                              </select>
-                            </div>
-                          </div> 
-                        </form>
-                      </div>
-                      <div class="card-footer bg-light">
-                          <button type="button" class="btn btn-primary btn-sm">Add New Category</button>
-                      </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 18rem;">
-                      <div class="card-header bg-light ">Featured Image</div>
-                      <div class="card-body">
-                        
-
-                      </div>
-                      <div class="card-footer bg-light">
-                          <a href="#">Set Featured Image</a>
-                      </div>
-                    </div>  
-                    <div class="card mb-3" style="max-width: 18rem;">
-                      <div class="card-header bg-light top-cat-title"><h3>Publish</h3></div>
+      <form id="blogForm" class="row" action="" method="POST" enctype='multipart/form-data'>
+      
+        <div class="form-group col-md-8">
+          <label>Title</label>
+          <input class="form-control " type="text" name="title" />
+          <label>Post</label>
+          <textarea
+            id="editor"
+            class="form-control editor"
+            name="description"
+           
+          ></textarea>
+        </div>
+        <!-- <div class="form-group col-md-4">
+          <label>Add Image</label>
+          <input type="file" name="image" class="form-control input-file" />
+          <label>Choose Category</label>
+          <select name="pets" id="pet-select">
+            <option value="">--Select Category--</option>
+            <option value="javascript">Javascript</option>
+            <option value="Node.js">Node.js</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="NoSQL">NoSQL</option>
+            <option value="SQL"></option>
+            <option value="SQL"></option>
+            <option value="SQL"></option>
+          </select> -->
+          <div class=" form-group ">
+            <!-- <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light ">Publish</div>
                       <div class="card-body">
                        
                       </div>
@@ -372,9 +320,60 @@
                           <button type="button" class="btn btn-info btn-sm">Save Draft</button>
                           <button type="button" class="btn btn-primary btn-sm">Publish</button>
                       </div>
-                    </div>  
-        </div>
-        </div>
+                    </div> -->
+                    <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light ">Tags</div>
+                      <div class="card-body">
+                          <div class="form-group row">
+                            <div class="col-12">
+                              <input id="tags" name="tags" placeholder="seperate with commas" required="required" class="form-control here" type="text">
+                            </div>
+                            <div class="col-12">
+                                <small>Seperate Tags with commas</small>
+                            </div>
+                          </div> 
+                      </div>
+                      <div class="card-footer bg-light">
+                          <a href="#">Choose from the most used tags</a>
+                      </div>
+                    </div>
+                    <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light ">Categories</div>
+                      <div class="card-body">
+                          <div class="form-group row">
+                            <label for="select" class="col-12 col-form-label">Select Category</label> 
+                            <div id="categoryContainer" class="col-12">
+                              <div class="form-group row m-2">
+                                <select id="select" name="select" class="custom-select select" required="required">
+                                  <option value="rabbit">Rabbit</option>
+                                  <option value="duck">Duck</option>
+                                  <option value="fish">Fish</option>
+                                </select>
+                              </div>
+                              
+                            </div>
+                          </div>
+                          
+                      </div>
+                      <div class="card-footer bg-light">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="addNewCategory()">Add New Category</button>
+                      </div>
+                    </div>
+                <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-header bg-light ">Featured Image</div>
+                      <div class="card-body">
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Default file input example</label>
+                          <input class="form-control" type="file" name="image" id="formFile">
+                        </div>
+                      </div>
+                    </div>    
+          </div>
+          <div class="text-center">
+            <!-- <button class="btn btn-primary compose-submit-btn" onclick="click1234('/admin/new-post')" type="submit" name="button">Publish</button> -->
+            <input class="btn btn-primary compose-submit-btn"  type="button" name="drafts" value="drafts" onclick="click1234('/admin/save-drafts')">
+            <input class="btn btn-primary compose-submit-btn"  type="button" name="Publish" value="Publish" onclick="click1234('/admin/new-post')">
+          </div>
       </form>
     </div>
 </main>
@@ -392,7 +391,7 @@
     </div>
   </footer>
     </div>
-  </div>
+</div>
   <!-- Chart library -->
   <script src="/js/chart.min.js"></script>
   <!-- Icons library -->
