@@ -289,9 +289,41 @@
         </div>
         <div>
           <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-success">Success</button>
         </div>
+        <ul class="list-group">
+          <% posts.forEach(post => { %>
+            <li class="list-group-item white-block">
+              <h4><%= post.postTitle %></h4>
+              <p><%= post.postContent %></p>
+              <!-- <div class="btn-group">
+                <a href="/posts/<%= post._id %>/edit" class="btn btn-primary">Edit</a>
+                <a href="/posts/<%= post._id %>/delete" class="btn btn-danger">Delete</a>
+                <a href="/posts/<%= post._id %>" class="btn btn-info">Preview</a>
+              </div> -->
+              <div>
+                <!-- <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-success">Success</button> -->
+                <a class="btn btn-primary" href="#" role="button">Edit</a>
+                <a class="btn btn-danger" href="#" role="button">Delete</a>
+                <a class="btn btn-info" href="#" role="button">Unpublish</a>
+              </div>
+            </li>
+          <% }); %>
+        </ul>
+
+        <div class="pagination-archive">
+          <ul>
+          <% for (let i = 1; i <= pageCount; i++) { %>
+            <li class="<%= i === currPage ? 'active' : '' %>">
+              <a href="/<%= i == 1 ? '' : 'page/' + i%>"><%=i%></a>
+            </li>
+          <% } %>
+          </ul>
+        </div>
+
           
         <!-- <div>
           <ul>
@@ -412,15 +444,6 @@
         </article>
       </div>
     </div>
-    <!-- <div class="pagination-archive">
-      <ul>
-      <% for (let i = 1; i <= pageCount; i++) { %>
-        <li class="<%= i === currPage ? 'active' : '' %>">
-          <a href="/<%= i == 1 ? '' : 'page/' + i%>"><%=i%></a>
-        </li>
-     <% } %>
-      </ul>
-    </div> -->
   </div>
 </main>
 <footer class="footer">

@@ -81,6 +81,7 @@ const userSchema = new mongoose.Schema(
 )
 
 postSchema.plugin(mongoosePagination);
+draftSchema.plugin(mongoosePagination)
 // userSchema.plugin(passportLocalMongoose)
 
 // postSchema.pre("validate", function(next) {

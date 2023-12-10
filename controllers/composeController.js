@@ -46,7 +46,7 @@ var storage = multer.diskStorage({
   }
 })
 var upload = multer({ storage: storage })
-const size = 9;
+const size = 5;
 
 const homeView = (req, res) => {
   Post.paginate({}, { sort: { _id: -1 }, offset: 0, limit: size }).then(
@@ -213,6 +213,19 @@ upload.single("image")(req, res, (err) => {
   });
 }
 
+const allDraftView = (req, res) => {
+  Draft.paginate({}, { sort: { _id: -1 }, offset: 0, limit: size }).then(
+    (result) => {
+      // console.log(result.totalPages);
+      res.render("drafts", {
+        posts: result.docs,
+        pageCount: result.totalPages,
+        currPage: result.page,
+      });
+    }
+  );
+}
+
 const newDraft = (req, res) => {
   console.log(req.body.title, req.body.description);
   const draft = new Draft({
@@ -250,7 +263,8 @@ module.exports = {
   admin,
   newPostView,
   allPostView,
-  newDraft
+  newDraft,
+  allDraftView
 };
 
 

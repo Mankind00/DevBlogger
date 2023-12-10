@@ -13,11 +13,13 @@ const {
   newPostView,
   allPostView,
   newDraft,
+  allDraftView,
   testPost,
   aboutView,
   contactView,
   adminPanel,
-  registerView
+  registerView,
+  allDraft
 } = require("../controllers/composeController");
 
 const router = express.Router();
@@ -37,7 +39,8 @@ router.get("/admin", admin);
 // router.get("/contact", contactView);
 router.post("/admin/new-post", newPost);
 // router.post("/compose", newPost);
-router.post("/admin/save-draft-route", newPost);
+// router.post("/admin/save-draft-route", newPost);
 router.post("/admin/save-drafts", newDraft);
+router.get("/admin/drafts", allDraftView)
 
 module.exports = router;
