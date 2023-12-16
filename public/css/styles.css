@@ -376,10 +376,10 @@ div.post-featured-image {
 
 .post-container {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Two columns, main content and aside */
+  grid-template-columns: 1fr 2fr 1fr; /* Two columns, main content and aside */
   gap: 12px;
   max-width: 1100px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 20px;
 }
 
@@ -435,6 +435,10 @@ div.post-featured-image {
       top: 10px;
       left: 10px;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 
@@ -552,4 +556,106 @@ div.post-featured-image {
 .mt-3 a:hover {
   text-decoration: none;
   color: #32407B;
+}
+
+
+.flex-container {
+  display: flex;
+  overflow: visible;
+}
+
+.flex-container .sticky-wrapper {
+  min-width: 350px;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  position: relative;
+}
+
+.flex-container .sticky-wrapper {
+  z-index: 2;
+}
+
+.flex-container .sticky-wrapper .author-sidebar {
+  background-color: #ededed;
+  position: fixed;
+  padding: 2rem 2rem 0;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  top: 80px;
+  width: 350px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.flex-container article {
+  width: 100%;
+}
+
+.section-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 82.5rem;
+  width: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.hero-blocks-inner {
+  max-width: 49.375rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.prl-5 {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.hero-blocks-middle {
+  max-width: 51.25rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-rich-text {
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: gt-regular;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.section-rich-text-inner {
+  max-width: 49.375rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .flex-container .sticky-wrapper {
+    width: 100%;
+}
+.flex-container {
+  flex-flow: wrap;
+  flex-direction: column-reverse;
+}
+
+#stickyAuthorSidebar {
+  position: static;
+}
+
+.flex-container .sticky-wrapper .author-sidebar {
+  position: relative;
+  width: 100%;
+  top: unset;
+  height: unset;
+}
 }

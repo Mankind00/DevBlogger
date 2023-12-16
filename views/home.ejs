@@ -13,10 +13,16 @@
             <a class="entry-title-link" href="/post/<%=post._id%>"><%=post.postTitle%></a>
           </h2>
           <!-- <p>
-            <%- post.postContent.substring(0, 100)%>
+            <%- post.snippet.substring(0, 100)%>
           </p> -->
         </header>
-        
+
+        <p class="post-paragraph <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>">
+          <%- post.snippet.substring(0, 100)%>
+        </p>
+        <div>
+          <a class="read--more <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>" href="/post/<%=post._id%>">Read More</a>
+        </div>
       </div>
       <% }) %>
       <!-- <div class="grid-item grid-item2">Item 2</div>

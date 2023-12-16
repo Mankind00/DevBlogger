@@ -14,6 +14,7 @@ const {
   allPostView,
   newDraft,
   allDraftView,
+  allPostPageView,
   testPost,
   aboutView,
   contactView,
@@ -30,6 +31,7 @@ router.get("/post/:postid", postView);
 router.get("/login", loginView);
 router.get("/admin/new-post", newPostView)
 router.get("/admin/all-posts", allPostView)
+router.get("/admin/all-posts/:adminPageNum", allPostPageView)
 router.post("/login", loginUser);
 router.get("/signup", registerView)
 router.post("/register", registerUser)

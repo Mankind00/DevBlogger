@@ -39,19 +39,19 @@ const session = require("express-session");
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/uploads')
+    cb(null, 'public')
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
+    cb(null, `uploads/admin-${file.fieldname}-${Date.now()}`)
   }
 })
 var upload = multer({ storage: storage })
-const size = 5;
+const size = 3;
 
 const homeView = (req, res) => {
   Post.paginate({}, { sort: { _id: -1 }, offset: 0, limit: size }).then(
     (result) => {
-      // console.log(result.totalPages);
+      console.log(result.totalPages);
       res.render("home", {
         posts: result.docs,
         pageCount: result.totalPages,
@@ -169,7 +169,9 @@ const newPostView = (req, res) => {
 const allPostView = (req, res) => {
   Post.paginate({}, { sort: { _id: -1 }, offset: 0, limit: size }).then(
     (result) => {
-      // console.log(result.totalPages);
+      console.log(result.totalPages);
+      console.log(result.docs);
+      console.log(result.totalDocs);
       res.render("allPost", {
         posts: result.docs,
         pageCount: result.totalPages,
@@ -178,6 +180,21 @@ const allPostView = (req, res) => {
     }
   );
 }
+
+const allPostPageView = (req, res) => {
+  const pageNumber = req.params.adminPageNum;
+  Post.paginate(
+    {},
+    { sort: { _id: -1 }, offset: size * (pageNumber - 1), limit: size }
+  ).then((result) => {
+    console.log(result);
+    res.render("allPost", {
+      posts: result.docs,
+      pageCount: result.totalPages,
+      currPage: result.page,
+    });
+  });
+};
 
 const composeView = (req, res) => {
   res.render("compose")
@@ -226,6 +243,21 @@ const allDraftView = (req, res) => {
   );
 }
 
+const allDraftPageView = (req, res) => {
+  const pageNumber = req.params.adminPageNum;
+  Draft.paginate(
+    {},
+    { sort: { _id: -1 }, offset: size * (pageNumber - 1), limit: size }
+  ).then((result) => {
+    console.log(result);
+    res.render("allPost", {
+      posts: result.docs,
+      pageCount: result.totalPages,
+      currPage: result.page,
+    });
+  });
+};
+
 const newDraft = (req, res) => {
   console.log(req.body.title, req.body.description);
   const draft = new Draft({
@@ -263,8 +295,10 @@ module.exports = {
   admin,
   newPostView,
   allPostView,
+  allPostPageView,
   newDraft,
-  allDraftView
+  allDraftView,
+  allDraftPageView,
 };
 
 

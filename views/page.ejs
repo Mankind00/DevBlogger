@@ -11,7 +11,7 @@
         </header>
 
         <p class="post-paragraph <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>">
-          <%- post.postContent.substring(0, 100)gti%>
+          <%- post.snippet.substring(0, 100)%>
         </p>
         <div>
           <a class="read--more <%= index == 0 ? '' : index == 7 ? ''  : 'hidden' %>" href="/post/<%=post._id%>">Read More</a>

@@ -54,13 +54,13 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="admin/all-posts">All Posts</a>
+                            <a href="all-posts">All Posts</a>
                         </li>
                         <li>
-                            <a href="admin/new-post">Add new post</a>
+                            <a href="new-post">Add new post</a>
                         </li>
                         <li>
-                            <a href="admin/drafts">Add new post</a>
+                            <a href="drafts">Add new post</a>
                         </li>
                     </ul>
                 </li>
@@ -296,7 +296,7 @@
           <% posts.forEach(post => { %>
             <li class="list-group-item white-block">
               <h4><%= post.postTitle %></h4>
-              <p><%= post.postContent %></p>
+              <p><%= post.snippet %></p>
               <!-- <div class="btn-group">
                 <a href="/posts/<%= post._id %>/edit" class="btn btn-primary">Edit</a>
                 <a href="/posts/<%= post._id %>/delete" class="btn btn-danger">Delete</a>
@@ -318,7 +318,7 @@
           <ul>
           <% for (let i = 1; i <= pageCount; i++) { %>
             <li class="<%= i === currPage ? 'active' : '' %>">
-              <a href="/<%= i == 1 ? '' : 'page/' + i%>"><%=i%></a>
+              <a href="/<%= i === 1 ? 'admin/all-posts' : 'admin/all-posts/' + i%>"><%=i%></a>
             </li>
           <% } %>
           </ul>

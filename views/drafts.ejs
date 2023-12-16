@@ -328,7 +328,7 @@
           <ul>
           <% for (let i = 1; i <= pageCount; i++) { %>
             <li class="<%= i === currPage ? 'active' : '' %>">
-              <a href="/<%= i == 1 ? '' : 'page/' + i%>"><%=i%></a>
+              <a href="/<%= i === 1 ? 'admin/drafts' : 'admin/drafts/' + i%>"><%=i%></a>
             </li>
           <% } %>
           </ul>

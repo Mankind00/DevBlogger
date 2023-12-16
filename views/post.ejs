@@ -1,15 +1,14 @@
 <%- include("partials/header"); -%>
 
 
-<div class="home-intro">
+<!-- <div class="home-intro">
   <h1 class="heading-intro"><%= title %></h1>
 </div>
 <div class="site-inner">
   <div class="post-featured-image">
     <img
       class="featured-image"
-      src="data:<%=addImage.contentType%>;base64,
-      <%=addImage.data.toString('base64')%>"
+      src="/<%= addImage %>"
     />
   </div>
   
@@ -22,7 +21,48 @@
         <p>Related article</p>
     </aside>
   </div>
+</div> -->
+
+<div class="flex-container">
+  <!-- Sticky Aside Wrapper -->
+  <div class="sticky-wrapper">
+      <!-- Author Information -->
+      <aside class="author-sidebar" id="stickyAuthorSidebar">
+          <div class="">
+              <h5 class="">Author Name</h5>
+              <p class="">Author bio and information.</p>
+          </div>
+      </aside>
+  </div>
+
+  <!-- Article Section -->
+      <!-- Main Blog Post Content -->
+    <article>
+        <!-- Title Details Section -->
+        <section class="section-rich-text">
+            <div class="section-container relative">
+            <div class="hero-blocks-inner relative prl-5">
+              <div class="hero-blocks-middle">
+                <h2 class="title-2 mb-3">Blog Post Title</h2>
+                <h5 class="title-2 mb-3">Date</h5>
+              </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <section>
+          <div class="section-container">
+            <div class="section-rich-text-inner prl-5">
+              <div class="section-rich-text-leading">
+                <p>Your blog post content goes here.</p>
+            </div>
+            </div>
+          </div>
+        </section>
+    </article>
 </div>
+
 
 
 
