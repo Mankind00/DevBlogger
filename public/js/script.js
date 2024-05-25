@@ -29,16 +29,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
     });
   };
-  
-  ClassicEditor.builtinPlugins.push(MinHeightPlugin);
-  ClassicEditor
-    .create( document.querySelector( '#editor' ) )
-    .then( editor => {
-      // console.log( editor );
-    })
-    .catch( error => {
-      console.error( error );
+
+  tinymce.init({
+    selector: '#editor'
   });
+  
+  // ClassicEditor.builtinPlugins.push(MinHeightPlugin);
+  // ClassicEditor
+  //   .create( document.querySelector( '#editor' ) )
+  //   .then( editor => {
+  //     // console.log( editor );
+  //   })
+  //   .catch( error => {
+  //     console.error( error );
+  // });
 
   
 

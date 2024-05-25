@@ -271,15 +271,9 @@ const newDraft = (req, res) => {
         })
 }
 
-const aboutView = (req, res) => {
-  res.render("about", {});
-};
-
-const contactView = (req, res) => {
-  res.render("contact", {});
-};
-
-// const newPost =
+const profileView = (req, res) => {
+  res.render("profile")
+}
 
 module.exports = {
   homeView,
@@ -299,6 +293,7 @@ module.exports = {
   newDraft,
   allDraftView,
   allDraftPageView,
+  profileView
 };
 
 

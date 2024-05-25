@@ -5,7 +5,7 @@ const {
   newPost,
   pageView,
   loginView,
-  adminTest,
+  profileView,
   registerUser,
   composeView,
   admin,
@@ -32,6 +32,7 @@ router.get("/login", loginView);
 router.get("/admin/new-post", newPostView)
 router.get("/admin/all-posts", allPostView)
 router.get("/admin/all-posts/:adminPageNum", allPostPageView)
+router.get("/admin/profile", profileView)
 router.post("/login", loginUser);
 router.get("/signup", registerView)
 router.post("/register", registerUser)
